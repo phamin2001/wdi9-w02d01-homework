@@ -20,9 +20,9 @@ let spaceshipList = [hull, "laser blasters", "tractor beam", "warp drive"];
 let lisOfStudents = ["amin", "nick", "anna", "james"];
 
 // A list of student names from our class, each with a location.
-// object with array of objects as its properties
-const strudentsDetails = {
-    student: [{
+// array of objects 
+const strudentsDetails = [
+    {
         name: "amin",
         location: "Bouder"
     },
@@ -30,15 +30,15 @@ const strudentsDetails = {
         name: "jack",
         location: "Denver"
 
-    }]
-}
+    }
+]
 
 // A list of student names from our class, each with a location and each with a list of favorite tv shows.
 // object with array of object as its properties each containing name and location and
 // array of a list of favorite tv shows
 
-const strudentsWithMoreDetails = {
-    student: [{
+const strudentsWithMoreDetails = [
+    {
         name: "amin",
         location: "Bouder",
         favTvShow: ["mad men", "friends", "x-files"]
@@ -47,5 +47,7 @@ const strudentsWithMoreDetails = {
         name: "jack",
         location: "Denver",
         favTvShow: ["scobar", "breaking bad", "lsot"];
-    }]
-}
+    }
+]
+
+//
