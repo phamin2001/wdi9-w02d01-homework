@@ -4,8 +4,8 @@
 
 // A light switch that can be either on or off:
 // boolean
-let key = true; // when switch is on
-let key = false; // when wswitch is off
+var on = true; // when switch is on
+on = false; // when wswitch is off
 
 // A user's email address.
 // using String
@@ -13,7 +13,7 @@ let email = "amin@ph.io";
 
 // A spaceship with a hull, laser blasters, tractor beam, and warp drive.
 // array
-let spaceshipList = [hull, "laser blasters", "tractor beam", "warp drive"];
+let spaceshipList = ["hull", "laser blasters", "tractor beam", "warp drive"];
 
 // A list of student names from our class.
 // array or object
@@ -37,6 +37,8 @@ const strudentsDetails = [
 // object with array of object as its properties each containing name and location and
 // array of a list of favorite tv shows
 
+// array of objects which each one has key with values of array of favorite tv shows
+
 const strudentsWithMoreDetails = [
     {
         name: "amin",
@@ -46,8 +48,26 @@ const strudentsWithMoreDetails = [
     {
         name: "jack",
         location: "Denver",
-        favTvShow: ["scobar", "breaking bad", "lsot"];
+        favTvShow: ["scobar", "breaking bad", "lsot"]
     }
 ]
 
-//
+// 2. Take it Easy
+// 1. 
+let rainbowColorArray = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+let bcolor;
+for(let i = 0; i < rainbowColorArray.length; i++) {
+    if(rainbowColorArray[i] === "blue") {
+        bcolor = rainbowColorArray[i];
+    }
+}
+console.log(bcolor);
+
+const info = {
+    name: "amin",
+    favFood: "pasta",
+    hobby: "coding",
+    livingTown: "Westmisnter",
+    favDataType: "Object"
+}
+console.log(info.hobby);
