@@ -110,3 +110,37 @@ const crazyObject = {
   console.log(crazyObject.larry.characters[2].favourtieHobby);
   console.log(crazyObject.larry.nicknames[1]);
   console.log(crazyObject.larry.characters[1]);
+
+  // 4. Object-ception
+  const inception = {
+    reality: {
+        dreamLayer1: {
+            dreamLayer2: {
+                dreamLayer3: {
+                    dreamLayer4: {
+                        dreamLayer5: {
+                            dreamLayer6: {
+                                limbo: "Joseph Gordon Levitt"
+                           }
+                        }
+                    }
+                }
+            }
+        }
+    }
+ }
+
+function findKey(obj){
+    if(typeof(obj.limbo) === 'string' ) {
+        obj.limbo = null;
+        return obj.limbo;
+    }
+    
+    let key;
+    for(key in obj) {
+        return findKey(obj[key]);
+    }
+}
+
+console.log(findKey(inception));
+
