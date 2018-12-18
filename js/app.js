@@ -188,3 +188,13 @@ for(let i = 0; i < bondFilms.length; i++) {
     }
 }
 console.log(oddBonds);
+
+// 7.
+let cumulativeGross = 0;
+
+for (let i = 0; i < bondFilms.length; i++) {
+    let strGross = bondFilms[i]["gross"].replace(/[^\d]/g, '');
+    let intGross = parseInt(strGross);
+    cumulativeGross += intGross;   
+}
+console.log(cumulativeGross);
