@@ -198,3 +198,86 @@ for (let i = 0; i < bondFilms.length; i++) {
     cumulativeGross += intGross;   
 }
 console.log(cumulativeGross);
+
+
+
+
+
+
+//////////////// Hungry For More?
+
+function actorWithLeastFilm(bondFilms) {
+    let arrayOfActor = createArrayOfActor(bondFilms);
+    let objectOfActors = createObjectofActors(arrayOfActor);
+    let objOfActor =  repeatOfMovies(objectOfActors, bondFilms);
+    let minOfActor =  findMinActor(objOfActor);
+    let actorWithMinMovie = findActorWithMinMovie(minOfActor, objOfActor);
+    return findObjectOfActorWithMin(actorWithMinMovie, bondFilms);
+
+}
+
+function createArrayOfActor(arrayOfObjects) {
+    let arrayOfActor = [];
+    for (let i = 0; i < arrayOfObjects.length; i++) {
+        arrayOfActor.push(arrayOfObjects[i]["actor"]);
+    }
+    return arrayOfActor;
+}
+
+function createObjectofActors(arrayOfActor) {
+    let objOfActor = {};
+    for(let i = 0; i < arrayOfActor.length; i++) {
+        objOfActor[arrayOfActor[i]] = 0;
+    }
+    return objOfActor;
+}
+
+function repeatOfMovies(objActors, boundFilms) {
+    let arrayOfNonRepeatedActor = Object.keys(objActors);
+    let counter = 0;
+    for (let i = 0; i < arrayOfNonRepeatedActor.length; i++) {
+        for (let j = 0; j < bondFilms.length; j++) {
+            if (boundFilms[j]["actor"] === arrayOfNonRepeatedActor[i]) {
+                counter++;
+            }
+        }
+        // add number of repeated actors as value for the actor(property)
+        objActors[arrayOfNonRepeatedActor[i]] = counter;
+        counter = 0;
+    }
+    return objActors;
+}
+
+function findMinActor(objActors) {
+    let min = objActors[Object.keys(objActors)[0]];
+   
+    for(let key in objActors) {
+        if(objActors[key] < min) {
+            min = objActors[key];
+        }
+    }
+    return min;
+}
+
+function findActorWithMinMovie(minOfActor, objActors) {
+    //let actor ="";
+    for(let key in objActors){
+        if(objActors[key] === minOfActor) {
+            return key;
+        }
+    }
+}
+
+function findObjectOfActorWithMin(actorWithMinMovie, bondFilms) {
+    for(let i = 0; i < bondFilms.length; i++) {
+        if(bondFilms[i]["actor"] === actorWithMinMovie) {
+            return bondFilms[i];
+        }
+    }
+}
+console.log(actorWithLeastFilm(bondFilms));
+
+
+
+
+
